@@ -16,5 +16,3 @@ All other product names, logos, and brands are the property of their respective 
 ### Third-Party Components
 
 These scripts bundle no third-party code. They call tools that ship with your operating system and with Steam (for example rsync, cp, find, robocopy, PowerShell, and the Steam client). Each of those remains under its own license.
-
-By APHONIC
