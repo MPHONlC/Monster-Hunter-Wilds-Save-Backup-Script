@@ -50,7 +50,7 @@ if defined STEAM_USER_ID (
 if not defined SRC (
     echo.
     echo [!] No save found for app %GAME_ID%.
-    echo     Make sure the game is installed and has saved at least once (Steam Cloud synced).
+    echo     Make sure the game is installed and has saved at least once ^(Steam Cloud synced^).
     echo     If the save is under another Steam account, set STEAM_USER_ID at the top.
     goto :done_fail
 )
@@ -72,11 +72,11 @@ echo Backup saved here:
 echo   %DEST%
 
 rem Steam launch-option mode: Steam passed the game command as arguments.
-if not "%~1"=="" (
-    %*
-    exit /b
-)
+if "%~1"=="" goto :manual
+%*
+exit /b
 
+:manual
 if "%LAUNCH_GAME%"=="1" (
     tasklist /fi "imagename eq %GAME_EXE%" 2>nul | find /i "%GAME_EXE%" >nul
     if errorlevel 1 (
